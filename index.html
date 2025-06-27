@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DesierPic - AI Image Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="logo">
+          <i class="fas fa-magic"></i>
+          <span>DesierPic</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <button class="pro-btn">Go Pro</button>
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main>
+        <h1>Create Stunning AI Art</h1>
+        <p class="subtitle">
+          Transform your imagination into breathtaking visuals with our powerful
+          AI
+        </p>
+
+        <div class="generator-container">
+          <!-- Prompt Input -->
+          <div class="prompt-section">
+            <textarea
+              id="prompt-input"
+              placeholder="Describe the image you want to generate..."
+            ></textarea>
+            <div class="prompt-footer">
+              <span id="char-count">0/400</span>
+              <button id="generate-btn" class="generate-btn">
+                <i class="fas fa-wand-magic-sparkles"></i> Generate
+              </button>
+            </div>
+          </div>
+
+          <!-- Options Section -->
+          <div class="options-section">
+            <div class="option-group">
+              <label for="model-select">Model:</label>
+              <select id="model-select">
+                <option value="standard">Standard</option>
+                <option value="hd">HD</option>
+                <option value="genius">Genius (Pro)</option>
+              </select>
+            </div>
+
+            <div class="option-group">
+              <label>Mode:</label>
+              <div class="toggle-switch">
+                <input type="checkbox" id="speed-quality-toggle" />
+                <label for="speed-quality-toggle">
+                  <span class="toggle-option">Speed</span>
+                  <span class="toggle-slider"></span>
+                  <span class="toggle-option">Quality</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="option-group">
+              <label for="shape-select">Shape:</label>
+              <div class="shape-selector">
+                <button class="shape-btn active" data-shape="square">
+                  <i class="fas fa-square"></i>
+                </button>
+                <button class="shape-btn" data-shape="portrait">
+                  <i class="fas fa-portrait"></i>
+                </button>
+                <button class="shape-btn" data-shape="landscape">
+                  <i class="fas fa-image"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Style Selector -->
+          <div class="style-section">
+            <h3>Style Presets</h3>
+            <div class="style-grid">
+              <div class="style-card active" data-style="realistic">
+                <img src="images/Realistic-image.jpg" alt="Realistic" />
+                <span>Realistic</span>
+              </div>
+              <div class="style-card" data-style="fantasy">
+                <img src="images/Fantasy - image.jpg" alt="Fantasy" />
+                <span>Fantasy</span>
+              </div>
+              <div class="style-card" data-style="anime">
+                <img src="images/Anime- image.jpg" alt="Anime" />
+                <span>Anime</span>
+              </div>
+              <div class="style-card" data-style="digital-art">
+                <img src="images/digital-art.png" alt="Digital Art" />
+                <span>Digital Art</span>
+              </div>
+              <div class="style-card" data-style="watercolor">
+                <img src="images/WaterColor.png" alt="Watercolor" />
+                <span>Watercolor</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Preview -->
+          <div class="preview-section">
+            <div class="preview-placeholder" id="preview-placeholder">
+              <i class="fas fa-image"></i>
+              <p>Your generated image will appear here</p>
+            </div>
+            <div
+              class="image-container"
+              id="image-container"
+              style="display: none"
+            >
+              <img id="generated-image" src="" alt="Generated AI Art" />
+              <div class="image-actions">
+                <button id="download-btn" class="action-btn">
+                  <i class="fas fa-download"></i> Download
+                </button>
+                <button id="regenerate-btn" class="action-btn">
+                  <i class="fas fa-arrows-rotate"></i> Regenerate
+                </button>
+              </div>
+            </div>
+            <div
+              class="loading-spinner"
+              id="loading-spinner"
+              style="display: none"
+            >
+              <div class="spinner"></div>
+              <p>Generating your DreamPic...</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="logo">
+              <i class="fas fa-magic"></i>
+              <span>DreamPic</span>
+            </div>
+            <p>© 2023 DreamPic AI. All rights reserved.</p>
+          </div>
+          <div class="footer-links">
+            <ul>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-upgrade">
+            <button class="pro-btn">Upgrade to Pro</button>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/profile.php?id=100019216691381"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/aditya_kash07/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/dhanvan-connect07/"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
